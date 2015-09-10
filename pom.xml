@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>x-editable-bootstrap3</artifactId>
-    <version>1.5.2-SNAPSHOT</version>
+    <version>1.5.1-1-SNAPSHOT</version>
     <name>X-editable Bootstrap3</name>
     <description>WebJar for X-editable Bootstrap</description>
     <url>http://webjars.org</url>
@@ -52,6 +52,16 @@
         <upstream.version>1.5.1</upstream.version>
         <upstream.url>http://vitalets.github.com/x-editable/assets/zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "bootstrap-editable": "js/bootstrap-editable"
+                },
+                "shim": {
+                    "bootstrap-editable": [ "bootstrap" ]
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
@@ -98,14 +108,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-gitexe</artifactId>
-                        <version>1.9</version>
-                    </dependency>
-                </dependencies>
+                <version>2.5.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.5</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
