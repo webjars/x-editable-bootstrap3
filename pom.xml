@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>x-editable-bootstrap3</artifactId>
-    <version>1.5.1-1</version>
+    <version>1.5.1-2-SNAPSHOT</version>
     <name>X-editable Bootstrap3</name>
     <description>WebJar for X-editable Bootstrap</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/x-editable-bootstrap3</url>
         <connection>scm:git:https://github.com/webjars/x-editable-bootstrap3.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/x-editable-bootstrap3.git</developerConnection>
-        <tag>x-editable-bootstrap3-1.5.1-1</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <dependencies>
